@@ -1,0 +1,67 @@
+@import "./globals.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-950 text-white antialiased;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-gray-900/80 backdrop-blur-xl border border-gray-800/50;
+  }
+  
+  .glow-orange {
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+/* MapLibre custom styles */
+.maplibregl-ctrl-attrib {
+  display: none !important;
+}
+
+.maplibregl-ctrl-logo {
+  display: none !important;
+}
+
+.maplibregl-compact {
+  display: none !important;
+}
+
+.custom-map-marker {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.custom-map-marker:hover {
+  transform: scale(1.2);
+}
